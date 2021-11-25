@@ -176,7 +176,7 @@ img{
     position: absolute;
     width: 100%;
     height: 4px;
-    top:76px;
+    bottom: 0;
     background: var(--accent-color);
     border-radius: 2px;
 }
@@ -356,8 +356,6 @@ img{
     text-transform: uppercase;
     background-color: rgba(47, 48, 58, 0.8);
     color: var(--main-title-color);
-    /* text-align: center;
-    padding-top: 27px; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -622,7 +620,7 @@ img{
 /* -------- MODAL -------------------------- */
 
 .baсkdrop.is-hidden{
-    /* visibility: hidden; */
+    visibility: hidden;
     pointer-events: none;
     opacity: 0;
     
@@ -636,15 +634,14 @@ img{
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     opacity: 1;
-    /* visibility: visible; */
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);   
+    visibility: visible;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);   
 }
 
 .modal{
     position: absolute;
-    /* display: block; */
     width: 528px;
-    height: 581px;
+    min-height: 581px;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -656,9 +653,8 @@ img{
 
 .modal-btn{
     position: fixed;
-    right: 0;
-    margin-right: 8px;
-    margin-top: 8px;
+    top: 8px;
+    right: 8px;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -737,7 +733,8 @@ img{
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.project-item:hover .overlay{
+.project-item:hover .overlay,
+.project-item:focus .overlay{
     transform: translateY(0);
 }
 .project-item:nth-child(3n){
